@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './Banner.css'
 
 const Banner = () => {
     return (
@@ -8,37 +9,38 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://image.freepik.com/free-photo/cheerful-asian-female-doctor-visiting-senior-caucasian-male-patient-home_1098-20652.jpg"
+                        src="https://images.unsplash.com/photo-1576765608866-5b51046452be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=878&q=80"
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h1 className="">Welcome to</h1>
+                        <h1>sCare Bangladesh</h1>
+                        <p>We offer you the best support for senior nursing care.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://image.freepik.com/free-photo/old-man-doing-muscle-injury-exercise-using-resistance-band-with-nurse-beside_482257-109.jpg"
-                        alt="Second slide"
+                        src="https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h1 className="">Welcome to</h1>
+                        <h1>sCare Bangladesh</h1>
+                        <p>We offer you the best support for senior nursing care.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://image.freepik.com/free-photo/stomatolog-professioanl-teeth-clinic-smiling-wearing-uniform-looking-camera-dentist-doctor-discussing-with-mother-child-about-teeth-treatment_482257-12010.jpg
-                        "
+                        src="https://images.unsplash.com/photo-1543333995-a78aea2eee50?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
                         alt="Third slide"
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h1 className="">Welcome to</h1>
+                        <h1>sCare Bangladesh</h1>
+                        <p>We offer you the best support for senior nursing care.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

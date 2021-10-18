@@ -1,0 +1,6 @@
+.service-card-background{
+    background-color: #ffffffd1;
+}
+.service-img img:hover{
+    transform: scale(1.07);
+}
