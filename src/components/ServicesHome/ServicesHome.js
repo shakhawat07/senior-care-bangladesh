@@ -1,7 +1,11 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 const ServicesHome = ({ service }) => {
-    const { img, name, description } = service;
+    const { id, img, name, description } = service;
+    const history = useHistory();
+    const handleShowDetails = () => {
+        history.push(`/service/${id}`);
+    }
     return (
         <div className="pb-4 container-fluid">
             <div className="row d-flex justify-content-start align-items-start py-3 mx-3 h-100 bg-white rounded">
@@ -14,6 +18,9 @@ const ServicesHome = ({ service }) => {
                         <h4 className="card-title fw-bold text-black">{name}</h4>
                         <p><span className="text-black fw-bolder"></span>{description}</p>
                         {/* <p><span className="text-black fw-bolder">Course Cost:</span> {price}</p> */}
+                        <button onClick={handleShowDetails} className="btn btn-danger px-3"
+                        > <span className="px-2">Show Details</span>
+                        </button>
                     </div>
 
                 </div>

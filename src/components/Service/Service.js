@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
 
-    const { name, description, img } = service;
+    const { id, name, description, img } = service;
+    const history = useHistory();
     // console.log(service);
 
     // course image style 
@@ -12,6 +14,10 @@ const Service = ({ service }) => {
         height: '250px',
         border: '2px solid black',
         borderRadius: '15px'
+    }
+
+    const handleShowDetails = () => {
+        history.push(`/service/${id}`);
     }
     return (
         <div className="col-lg-4 col-md-6 col-sm-12 col-12">
@@ -25,12 +31,12 @@ const Service = ({ service }) => {
                     {/* <p><span className="text-black fw-bolder">Course Cost:</span> {price}</p> */}
                 </div>
                 <div className="card-footer d-flex align-items-center justify-content-center">
-                    <button className="btn btn-danger px-3"
+                    <button onClick={handleShowDetails} className="btn btn-danger px-3"
                     > <span className="px-2">Show Details</span>
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
 
 
     );

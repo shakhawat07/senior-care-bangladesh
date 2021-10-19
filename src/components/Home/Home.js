@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import ExpertsHome from '../ExpertsHome/ExpertsHome';
+import OurGoals from '../OurGoals/OurGoals';
 import ServicesHome from '../ServicesHome/ServicesHome';
 
 const Home = () => {
@@ -36,8 +37,7 @@ const Home = () => {
             </section>
             <h1 className="text-center my-3">Our <span className="text-primary">Experts</span></h1>
             <hr />
-            {/* experts 
-             */}
+            {/* experts */}
             <section className="home-expert-container mb-5 container-fluid">
                 <div className="row p-5">
                     {
@@ -48,7 +48,11 @@ const Home = () => {
                         )
                     }
                 </div>
-
+            </section>
+            <h1 className="text-center my-3">Our <span className="text-primary">Goals</span></h1>
+            <hr />
+            <section className="container-fluid">
+                <OurGoals></OurGoals>
             </section>
         </div>
     );

@@ -10,7 +10,7 @@ const Experts = () => {
     }, []);
     // console.log(experts);
     return (
-        <div className="container-fluid expert-container">
+        <div className="container-fluid experts-container">
             <h1 className="text-primary mt-5 text-center">Our Experts</h1>
             <hr />
             <div className="row p-5">

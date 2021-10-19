@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
-    const { user, logout } = useAuth();
+    const { user, logOut } = useAuth();
 
     // NavLink activeStyle 
     const activeStyle = {
@@ -13,7 +13,7 @@ const Header = () => {
         color: "tomato"
     };
     return (
-        <Navbar sticky="top" bg="black" variant="dark" expand="md">
+        <Navbar sticky="top" bg="black" variant="dark" expand="lg" >
             <Container fluid>
                 <Navbar.Brand className="fs-1 fw-bolder ms-5">sCare Bangladesh</Navbar.Brand>
                 <Nav className="d-flex align-items-end justify-content-end">
@@ -39,7 +39,7 @@ const Header = () => {
                     </NavLink>
                     <span className="text-white">{user.displayName} </span>
                     {/* {user?.email && <button onClick={logout}>log out</button>} */}
-                    {user && <button className="ms-3 text-white btn btn-black border border-white" onClick={logout}>log out</button>}
+                    {user && <button className="ms-3 text-white btn btn-black border border-white" onClick={logOut}>log out</button>}
                 </Nav>
             </Container>
         </Navbar>
