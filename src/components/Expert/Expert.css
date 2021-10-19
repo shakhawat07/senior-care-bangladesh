@@ -1,0 +1,6 @@
+.expert-card-background{
+    background-color: #ffffffd1;
+}
+.expert-img img:hover{
+    transform: scale(1.07);
+}

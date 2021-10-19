@@ -8,6 +8,9 @@ import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import AuthProvider from './context/AuthProvider';
+import Register from './components/Register/Register';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Experts from './components/Experts/Experts';
 
 function App() {
   return (
@@ -39,11 +42,20 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
-            <Route exact path="/about">
+            <Route path="/experts">
+              <Experts></Experts>
+            </Route>
+            <Route path="/about">
               <About></About>
             </Route>
+            {/* <PrivateRoute path="/about">
+              <About></About>
+            </PrivateRoute> */}
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

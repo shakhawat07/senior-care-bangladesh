@@ -1,4 +1,5 @@
 import React from 'react';
+import './Service.css'
 
 const Service = ({ service }) => {
 
@@ -13,7 +14,7 @@ const Service = ({ service }) => {
         borderRadius: '15px'
     }
     return (
-        <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+        <div className="col-lg-4 col-md-6 col-sm-12 col-12">
             <div className="card h-100 border border-light shadow-lg service-card-background">
                 <div className="card-body service-img">
                     <img className="p-2 img-fluid" style={serviceImgStyle} src={img} alt="" />
@@ -23,7 +24,7 @@ const Service = ({ service }) => {
 
                     {/* <p><span className="text-black fw-bolder">Course Cost:</span> {price}</p> */}
                 </div>
-                <div className="card-footer">
+                <div className="card-footer d-flex align-items-center justify-content-center">
                     <button className="btn btn-danger px-3"
                     > <span className="px-2">Show Details</span>
                     </button>

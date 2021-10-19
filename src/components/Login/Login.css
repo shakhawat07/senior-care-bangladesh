@@ -1,12 +1,15 @@
 .login-container{
     background-color: #ffffffa3;
-    margin: 2rem 2rem ;
+    width: 50%;
+    transform: translate(50%, 0%);
+    /* margin: 2rem 6rem ; */
     padding: 2rem;
     border-radius: 3rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
-input[type=text], input[type=password] { 
+input[type=text],input[type=email], input[type=password] { 
      width: 75%; 
      margin: 8px 0;
      padding: 12px 20px; 

@@ -4,32 +4,53 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { error, signInUsingGoogle, handleRegistration, isLogin, handleNameChange, handleEmailChange, handlePasswordChange, toggleLogin, handleResetPassword } = useAuth();
     return (
         <div className="container-fluid">
             <div className="login-container">
-                <form action="">
-                    <h2 className="text-black fw-bold">Login</h2>
-                    <label className="text-black fw-bold mx-3">Username : </label>
-                    <input type="text" placeholder="Enter Username" name="username" required />
-                    <br />
-                    <label className="text-black fw-bold mx-3">Password : </label>
-                    <input type="password" placeholder="Enter Password" name="password" autoComplete="on" required />
-                    <br />
-                    <div className="mt-4 ms-5">
-                        <button className="btn btn-danger ps-3 mx-4 rounded" type="submit">Login</button>
-                        <input type="checkbox" />
-                        <span className="ms-2 text-black fw-bolder">Remember me</span>
-                        <button className="btn btn-danger px-3 mx-4 rounded" type="button"> Cancel</button>
-                        <span className="ms-2 text-black fw-bolder">Forgot <Link to="#"> password? </Link></span>
-                        <br />
-                        <div className="d-flex justify-content-center mt-3">
-                            <button className="btn btn-primary" onClick={signInUsingGoogle}>Google Sign In</button>
-                        </div>
-
-                        {/* <br />
-                        <Link to="/register">New User?</Link> */}
+                <form onSubmit={handleRegistration}>
+                    <h2 className="text-primary fw-bold mb-4 text-center">Please {isLogin ? 'Login' : 'Register'}</h2>
+                    {/* user name  */}
+                    {!isLogin && <div className="row mb-3">
+                        <label htmlFor="inputName" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Username: </label>
+                        <input type="text" onBlur={handleNameChange} className="form-control" id="inputName" placeholder="Enter Username" name="username" required />
+                    </div>}
+                    {/* email  */}
+                    <div className="row mb-3">
+                        <label htmlFor="inputEmail3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Email: </label>
+                        <input onBlur={handleEmailChange} type="email" className="form-control" id="inputEmail3" placeholder="Enter email" name="email" required />
                     </div>
+                    {/* password  */}
+                    <div className="row mb-3">
+                        <label htmlFor="inputPassword3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Password:</label>
+                        <input type="password" onBlur={handlePasswordChange} className="form-control" id="inputPassword3" placeholder="Enter Password" name="password" autoComplete="on" required />
+                    </div>
+                    {/* toogle checkbox  */}
+                    <div className="row mb-3">
+                        <div className="col-sm-10 offset-sm-2">
+                            <div className="form-check">
+                                <input onChange={toggleLogin} className="ms-2 form-check-input" type="checkbox" id="gridCheck1" />
+                                <label className="ms-2 text-black fw-bolder ms-3 form-check-label" htmlFor="gridCheck1">Already Registered?</label>
+                            </div>
+                        </div>
+                    </div>
+                    {/* submit button  */}
+                    <div className="row mb-2 text-danger">{error}</div>
+                    <br />
+                    <div className="d-flex justify-content-center">
+                        <button type="submit" className="btn btn-danger rounded">
+                            {isLogin ? 'Login' : 'Register'}
+                        </button>
+                        <button type="button" onClick={handleResetPassword} className="btn btn-secondary ps-3 ms-4 rounded">Reset Password</button>
+                    </div>
+                    <br />
+                    <div className="d-flex justify-content-center mt-2">
+                        <button className="btn btn-primary" onClick={signInUsingGoogle}>Google Sign In</button>
+                    </div>
+
+                    <br />
+                    <Link to="/register">New User?</Link>
+
                 </form>
             </div>
         </div>

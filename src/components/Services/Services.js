@@ -9,11 +9,11 @@ const Services = () => {
         fetch('./servicesData.json')
             .then(res => res.json())
             .then(data => setServices(data));
-    }, [services]);
+    }, []);
     // console.log(services);
     return (
         <div className="container-fluid service-container">
-            <h2 className="text-primary mt-5">Our Services</h2>
+            <h2 className="text-primary mt-5 text-center">Our Services</h2>
             <div className="row p-5">
                 {
                     services.map(service =>
