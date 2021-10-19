@@ -13,9 +13,12 @@ const Header = () => {
         color: "tomato"
     };
     return (
-        <Navbar sticky="top" bg="black" variant="dark" expand="lg" >
+        <Navbar sticky="top" bg="black" collapseOnSelect variant="dark" expand="lg" >
             <Container fluid>
-                <Navbar.Brand className="fs-1 fw-bolder ms-5">sCare Bangladesh</Navbar.Brand>
+                <Navbar.Brand className="fs-1 fw-bolder ms-2">
+                    <img className="img-fluid me-3" src="https://t3.ftcdn.net/jpg/03/19/94/76/360_F_319947608_Ayu6epdEVqBtGaR5DQ4Mz6WvCJYwJGsJ.webp" alt="" width="55" height="30" />
+                    sCare Bangladesh
+                </Navbar.Brand>
                 <Nav className="d-flex align-items-end justify-content-end">
                     <NavLink className="nav"
                         activeStyle={activeStyle}
@@ -39,7 +42,7 @@ const Header = () => {
                     </NavLink>
                     <span className="text-white">{user.displayName} </span>
                     {/* {user?.email && <button onClick={logout}>log out</button>} */}
-                    {user && <button className="ms-3 text-white btn btn-black border border-white" onClick={logOut}>log out</button>}
+                    {user?.displayName && <button className="ms-3 text-white btn btn-black border border-white" onClick={logOut}>log out</button>}
                 </Nav>
             </Container>
         </Navbar>

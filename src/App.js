@@ -11,7 +11,7 @@ import AuthProvider from './context/AuthProvider';
 import Register from './components/Register/Register';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Experts from './components/Experts/Experts';
-import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import ServiceDetail from './components/ServiceDetail/ServiceDetail';
 
 function App() {
   return (
@@ -29,15 +29,15 @@ function App() {
             <Route path="/services">
               <Services></Services>
             </Route>
-            <Route path="/service/:serviceId">
-              <ServiceDetails></ServiceDetails>
-            </Route>
-            <Route path="/experts">
+            <PrivateRoute path="/service/:serviceId">
+              <ServiceDetail></ServiceDetail>
+            </PrivateRoute>
+            <PrivateRoute path="/experts">
               <Experts></Experts>
-            </Route>
-            <Route path="/about">
+            </PrivateRoute>
+            <PrivateRoute path="/about">
               <About></About>
-            </Route>
+            </PrivateRoute>
             {/* <PrivateRoute path="/about">
               <About></About>
             </PrivateRoute> */}

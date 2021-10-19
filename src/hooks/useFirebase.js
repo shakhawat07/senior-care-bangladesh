@@ -5,6 +5,7 @@ import initializeAuthentication from '../FireBase/firebase.init';
 
 
 initializeAuthentication();
+const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
@@ -16,20 +17,15 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
 
-    const [loading, setLoading] = useState(true);
-    const auth = getAuth();
+    const [isLoading, setIsLoading] = useState(true);
+
     const googleProvider = new GoogleAuthProvider();
 
     // google sign in 
     const signInUsingGoogle = () => {
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log(result.user);
-                setUser(result.user);
-            })
-            .catch(error => {
-                setError(error.message);
-            })
+        setIsLoading(true);
+        return signInWithPopup(auth, googleProvider)
+            .finally(() => { setIsLoading(false) });
     }
 
     const toggleLogin = e => {
@@ -94,7 +90,7 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                console.log('Registered', user);
                 setError('');
                 verifyEmail();
                 setUserName();
@@ -121,10 +117,12 @@ const useFirebase = () => {
             .then(result => { })
     }
     const logOut = () => {
+        setIsLoading(true);
         signOut(auth)
             .then(() => {
                 setUser({});
             })
+            .finally(() => setIsLoading(false));
     }
 
     // const logOut = () => {
@@ -145,7 +143,7 @@ const useFirebase = () => {
             else {
                 setUser({});
             }
-            setLoading(false);
+            setIsLoading(false);
         });
         return () => unsubscribe;
     }, [])
@@ -153,7 +151,7 @@ const useFirebase = () => {
     return {
         user,
         error,
-        loading,
+        isLoading,
         isLogin,
         handleNameChange,
         handleEmailChange,
