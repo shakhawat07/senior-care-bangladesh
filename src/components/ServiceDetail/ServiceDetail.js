@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import './ServiceDetail.css'
 
 const ServiceDetail = () => {
     const [services, setServices] = useState([]);
@@ -17,10 +18,10 @@ const ServiceDetail = () => {
             {
                 services.filter(service => service.id === parseInt(serviceId)).map(filtered => (
                     < div className="container-fluid" key={filtered}>
-                        <div className="row m-5">
+                        <div className="row m-5 service-detail-container">
                             <div className="col-lg-12 col-md-12 col-sm-12 col-12 d-flex flex-column justify-content-center align-items-center">
-                                <h1 className="fw-5 my-3">{filtered.name}</h1>
-                                <img className="img-fluid border border-dark rounded p-4" src={filtered.img} alt="" />
+                                <h1 className="fw-5 my-3 text-primary">{filtered.name}</h1>
+                                <img className="img-fluid border border-secondary rounded p-4" style={{ width: '620px', height: '380px' }} src={filtered.img} alt="" />
                                 <p className="w-50 my-3 fs-5">{filtered.description}</p>
                             </div>
                         </div>

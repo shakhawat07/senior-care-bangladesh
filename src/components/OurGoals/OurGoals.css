@@ -1,8 +1,9 @@
 .goals-container{
-    background-color: #b6adadc5;
+    background-color: #d1d1d186;
+
 }
 .goals-container img{
-    border: 0.25rem solid white;
+    border: 2px solid white;
     border-radius: 3rem;
 }
 button:hover { 

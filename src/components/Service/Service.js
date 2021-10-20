@@ -8,7 +8,7 @@ const Service = ({ service }) => {
     const history = useHistory();
     // console.log(service);
 
-    // course image style 
+    // service image style 
     const serviceImgStyle = {
         width: '400px',
         height: '250px',
@@ -20,15 +20,12 @@ const Service = ({ service }) => {
         history.push(`/service/${id}`);
     }
     return (
-        <div className="col-lg-4 col-md-6 col-sm-12 col-12">
+        <div className="col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
             <div className="card h-100 border border-light shadow-lg service-card-background">
                 <div className="card-body service-img">
                     <img className="p-2 img-fluid" style={serviceImgStyle} src={img} alt="" />
                     <h3 className="card-title py-3 fs-3 text-black text-center mt-2">{name}</h3>
-                    {/* <p>{description}</p> */}
                     <p className="card-details p-2">{description}</p>
-
-                    {/* <p><span className="text-black fw-bolder">Course Cost:</span> {price}</p> */}
                 </div>
                 <div className="card-footer d-flex align-items-center justify-content-center">
                     <button onClick={handleShowDetails} className="btn btn-danger px-3"

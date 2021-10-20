@@ -23,7 +23,7 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/home">
+            <Route exact path="/home">
               <Home></Home>
             </Route>
             <Route path="/services">
@@ -38,9 +38,6 @@ function App() {
             <PrivateRoute path="/about">
               <About></About>
             </PrivateRoute>
-            {/* <PrivateRoute path="/about">
-              <About></About>
-            </PrivateRoute> */}
             <Route path="/login">
               <Login></Login>
             </Route>
@@ -54,7 +51,6 @@ function App() {
         </Router>
         <Footer></Footer>
       </AuthProvider>
-
     </div>
   );
 }

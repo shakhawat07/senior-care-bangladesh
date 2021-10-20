@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import './Services.css'
 
-
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
@@ -13,7 +12,8 @@ const Services = () => {
     // console.log(services);
     return (
         <div className="container-fluid service-container">
-            <h2 className="text-primary mt-5 text-center">Our Services</h2>
+            <h1 className="text-center mt-5 fw-bold">Our <span className="text-primary">Services</span></h1>
+            <hr />
             <div className="row p-5">
                 {
                     services.map(service =>

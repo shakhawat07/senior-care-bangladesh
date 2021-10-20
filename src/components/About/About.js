@@ -14,7 +14,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="col-lg-7 col-md-7 cl-sm-12 col-12">
-                        <img className="img-fluid" style={{ width: '620px', height: '380px' }} src="https://image.freepik.com/free-photo/elderly-female-smiling-with-young-female-doctor-visiting-senior-patient-woman-hospital-ward_1150-21714.jpg" alt="" />
+                        <img className="img-fluid p-2" style={{ width: '620px', height: '420px' }} src="https://image.freepik.com/free-photo/elderly-female-smiling-with-young-female-doctor-visiting-senior-patient-woman-hospital-ward_1150-21714.jpg" alt="" />
                     </div>
                 </div>
             </div>

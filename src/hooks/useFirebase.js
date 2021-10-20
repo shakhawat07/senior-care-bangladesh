@@ -1,24 +1,18 @@
 import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, signOut } from "firebase/auth";
-
 import initializeAuthentication from '../FireBase/firebase.init';
-
 
 initializeAuthentication();
 const auth = getAuth();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
-
     const [isLoading, setIsLoading] = useState(true);
-
     const googleProvider = new GoogleAuthProvider();
 
     // google sign in 
@@ -46,6 +40,7 @@ const useFirebase = () => {
     const handleRegistration = e => {
         e.preventDefault();
         console.log(email, password);
+
         // password regex validation 
         if (password.length < 6) {
             setError('Password Must be at least 6 characters long.')
@@ -71,9 +66,8 @@ const useFirebase = () => {
         else {
             registerNewUser(email, password);
         }
-
     }
-
+    // proceed login 
     const processLogin = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -85,7 +79,7 @@ const useFirebase = () => {
                 setError(error.message);
             })
     }
-
+    // new registration 
     const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -125,16 +119,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    // const logOut = () => {
-    //     setLoading(true);
-    //     signOut(auth)
-    //         .then(() => {
-    //             setUser({})
-    //         })
-    //         .finally(() => setLoading(false))
-    // }
-
-    // observe whether user auth state changed or not
+    // user auth state observe
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -150,6 +135,7 @@ const useFirebase = () => {
 
     return {
         user,
+        name,
         error,
         isLoading,
         isLogin,

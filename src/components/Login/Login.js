@@ -18,7 +18,7 @@ const Login = () => {
     }
     return (
         <div className="container-fluid">
-            <div className="login-container">
+            <div className="login-container my-5">
                 <form onSubmit={handleRegistration}>
                     <h2 className="text-primary fw-bold mb-4 text-center">Please {isLogin ? 'Login' : 'Register'}</h2>
                     {/* user name  */}
@@ -46,7 +46,7 @@ const Login = () => {
                         <label htmlFor="inputAddress" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Address: </label>
                         <input type="text" className="form-control" id="inputAddress" placeholder="Enter Address" name="address" />
                     </div>}
-                    {/* toogle checkbox  */}
+                    {/* toggle checkbox  */}
                     <div className="row mb-3">
                         <div className="col-sm-10 offset-sm-2">
                             <div className="form-check">
@@ -62,16 +62,12 @@ const Login = () => {
                         <button type="submit" className="btn btn-danger rounded">
                             {isLogin ? 'Login' : 'Register'}
                         </button>
-                        {/* <button type="button" onClick={handleResetPassword} className="btn btn-secondary ps-3 ms-4 rounded">Reset Password</button> */}
                     </div>
                     <br />
+                    {/* google sign in button  */}
                     <div className="d-flex justify-content-center mt-2">
                         <button className="btn btn-primary" onClick={handleGoogleLogin}>Google Sign In</button>
                     </div>
-
-                    {/* <br />
-                    <Link to="/register">New User?</Link> */}
-
                 </form>
             </div>
         </div>

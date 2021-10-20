@@ -23,10 +23,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h1 className="text-center my-3">Our <span className="text-primary">Services</span></h1>
+            <h1 className="text-center mt-5 fw-bold">Our <span className="text-primary">Services</span></h1>
             <hr />
-            {/* services  */}
-            <section className="home-service-container mb-5">
+            {/* our services  */}
+            <section className="home-service-container">
                 {
                     services.map(service => <ServicesHome
                         key={service.id}
@@ -35,9 +35,9 @@ const Home = () => {
                     )
                 }
             </section>
-            <h1 className="text-center my-3">Our <span className="text-primary">Experts</span></h1>
+            <h1 className="text-center fw-bold mt-4">Our <span className="text-primary">Experts</span></h1>
             <hr />
-            {/* experts */}
+            {/* our experts */}
             <section className="home-expert-container mb-5 container-fluid">
                 <div className="row p-5">
                     {
@@ -49,8 +49,9 @@ const Home = () => {
                     }
                 </div>
             </section>
-            <h1 className="text-center my-3">Our <span className="text-primary">Goals</span></h1>
+            <h1 className="text-center fw-bold mt-4">Our <span className="text-primary">Goals</span></h1>
             <hr />
+            {/* our goals  */}
             <section className="container-fluid">
                 <OurGoals></OurGoals>
             </section>

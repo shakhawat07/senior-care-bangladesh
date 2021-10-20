@@ -1,10 +1,10 @@
 .about-container{
-    background-color: #b6adadc5;
+    background-color: #d1d1d186;
 }
 .about-container img{
     border: 0.25rem solid white;
     border-radius: 3rem;
 }
-button:hover { 
-    transform: scale(1.1);
-} 
+.about-container img:hover{
+    transform: scale(0.95);
+}

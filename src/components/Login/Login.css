@@ -1,5 +1,5 @@
 .login-container{
-    background-color: #ffffffa3;
+    background-color: #e6e6e6ad;
     width: 50%;
     transform: translate(50%, 0%);
     /* margin: 2rem 6rem ; */
@@ -18,6 +18,3 @@ input[type=text],input[type=email], input[type=password] {
      border-radius: 3rem;
      box-sizing: border-box; 
  }
-button:hover { 
-     transform: scale(1.1);
- } 
